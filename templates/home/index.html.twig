@@ -1,0 +1,104 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Doctolib{% endblock %}
+
+{% block body %}
+
+<!DOCTYPE html>
+<html lang="fr">
+	<body>
+		<!-- bannière principale -->
+		<div id="home">
+			<!-- bannière d'accueil -->
+			<div class="banner">
+				<div>
+					<img src="images/banner.png" alt=""/>
+				</div>
+				<div>
+					<h6>Bienvenue sur Doctolib</h6>
+					<h3>Des professionnels de la <br>santé à votre service</h3>
+					<p>La consultation à distance n'a jamais été aussi simple</p>
+					<a href="{{ path('app_login') }}"> Connectez-vous</a>
+				</div> 
+		</div>			
+
+		<!-- //bannière d'accueil -->
+		</div>
+		<!-- //bannière principale -->
+
+		<!-- Informations -->
+		<section id="infos">
+			<div class="container">
+				<div class="bloc">
+					<div>
+						<div>
+							<h3><span class="fa fa-syringe"></span> Vaccination COVID-19</h3>
+							<p>La campagne de rappel s’étend à toutes 
+							<br>les personnes de plus de 18 ans.</p>
+						</div>
+					</div>
+				</div>
+				<div class="bloc">
+					<div>
+						<div >
+							<h3><span class="fas fa-paper-plane"></span> Gérez vos documents sur Doctolib</h3>
+							<p>Ne perdez plus jamais vos documents médicaux.
+							 <br>Retrouvez-les sur l'application et partagez-les 
+							 <br>avec vos professionnels de santé ou dans une pharmacie</p>
+						</div>
+					</div>
+				</div>
+				<div class="bloc">
+					<div>
+						<div>
+							<h3><span class="fab fa-dyalog"></span> Vaccination antigrippale</h3>
+							<p>La vaccination contre la grippe est désormais ouverte à tous.
+							<br>Pharmaciens et médecins généralistes ont des disponibilités.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- //Informations -->
+
+		<!-- Soins -->
+		<div id="services">
+			<div>
+				<div class ="title">
+					<h6>Pourquoi prendre rendez-vous avec Doctolib ?</h6>
+				</div>
+				<div class="container">
+					<div class="card">
+							<span class="fa fa-stethoscope"></span>
+							<br>
+							<p>Accédez aux disponibilités de 
+								<br>dizaines de milliers de 
+								<br>professionnels de santé.</p>
+					</div>
+					<div class="card">
+							<span class="fas fa-calendar-week"></span>
+							<br>
+
+							<p>Prenez rendez vous en ligne, 
+								<br>24h/24 et 7j/7, pour une 
+								<br>consultation physique ou vidéo.</p>
+					</div>
+					<div class="card">
+							<span class="fas fa-comment"></span>
+							<br>
+							<p>Recevez des rappels automatiques 
+								<br>par SMS ou par email.<br><br></p>
+					</div>
+					<div class="card">
+							<span class="fas fa-folder-open"></span>
+							<br>
+							<p>Retrouvez votre historique de 
+								<br>rendez-vous et vos documents 
+								<br>médicaux.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- //Soins -->
+</html>
+{% endblock %}

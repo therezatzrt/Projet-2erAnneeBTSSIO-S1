@@ -1,0 +1,60 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Rendez-vous{% endblock %}
+{% block stylesheets %}
+                <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.min.css" integrity="sha256-16PDMvytZTH9heHu9KBPjzrFTaoner60bnABykjNiM0=" crossorigin="anonymous">
+                <link rel="stylesheet" href="https://bootswatch.com/4/yeti/bootstrap.min.css">
+                <link rel="stylesheet" href="/css/style.css">
+    <style>
+        #calendrier {
+            width:  80%;
+            margin: auto;}  
+    </style>
+{% endblock %}
+
+{% block body %}
+      <div id="calendrier"><div>
+<script>
+     window.onload = () => {
+                    let calendarElt = document.querySelector("#calendrier")
+                    let calendar = new FullCalendar.Calendar(calendarElt, {
+                        initialView: 'timeGridWeek',
+                        locale: 'fr',
+                        timeZone: 'Europe/Paris',
+                        allDaySlot: false,
+                        headerToolbar: {
+                            start: 'prev,next today',
+                            end: 'dayGridMonth,timeGridWeek,timeGridDay'
+                        },
+                        //recuperer les rvds dans la bdd
+                        events: {{ data|raw }},
+                        //permet le deplacement de rdv
+                        editable : true,
+                        // déplacer le rdv vers le haut ( commencer plutôt)
+                        eventResizableFromStart:true
+                    })
+                    //ecouteur d'evenement
+                    calendar.on('eventChange', (e) => {
+                         let url = '/api/${e.event.id}/edit'
+                        let donnees = {
+                            "titre": e.event.titre,
+                            "description": e.event.extendedProps.description,
+                            "start": e.event.start,
+                            "end": e.event.end,
+                            "backgroundColor": e.event.backgroundColor,
+                            "textColor": e.event.texteColor,
+                            "allDay": e.event.allDay
+                        }
+                        // remmetre a jour le changement
+                        let xhr = new XMLHttpRequest
+
+                        xhr.open("PUT",url)
+                        xhr.send(JSON.stringFy(donnees))
+                    })
+
+
+                    // rendu du calendrier 
+            calendar.render()
+        }
+</script>
+{% endblock %}

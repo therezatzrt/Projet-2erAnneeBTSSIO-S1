@@ -1,0 +1,175 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+body {
+    font-family:"Poppins";
+    width: 100%;
+}
+
+@media screen and(max-width: 100%) {
+    #home .banner {
+        height: 60vh;
+    } 
+}
+.container{
+    max-width:max-content;
+    padding: 0;
+}
+
+#home .banner {
+    height: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 100px 0 20px 0;
+}
+
+#home .banner img {
+    max-width: 500px;   
+}
+
+#home .banner h6 {
+    font-size:1.2em;
+    font-weight: 500;
+    color: #565656;
+}
+
+#home .banner h3 {
+    font-size: 3.5em;
+    line-height: 1.2em;
+    color: #0f9fcd;
+}
+
+#home .banner p {
+    font-size: 1.2em;
+    margin: 30px 0 50px 0;
+    color: #565656;
+}
+
+#home .banner a {
+    border-radius: 20px;
+    padding: 0.7em 2em;
+    color: white;
+    background: linear-gradient( 45deg, #0a99d1, #2ec5b2);
+}
+
+#home {
+    position: relative;
+    content: "";
+    width: 100%;
+    background-image: url(../images/Wave.png);
+    background-repeat: no-repeat ;
+}
+
+#infos .container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    flex-wrap: wrap;
+}
+
+#infos .container .bloc {
+    text-align: center;
+    width: 300px;
+    height: 300px;
+    border-radius: 10px;
+    display: fkex;
+    align-items: center;
+    justify-content: center;
+    margin: 30px 10px 0 10px;
+    cursor: pointer;
+    transition: 0.2s;
+    background: linear-gradient(45deg, rgb(10,153,209), rgb(46, 197,178));
+}
+
+#infos .container .bloc:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 65px 90px -55px #565656;
+}
+#infos .container .bloc h3{
+    font-size: 1.5em;
+    margin: 30px 0px 15px 0;
+
+}
+
+#infos .container .bloc span.fa,
+#infos .container .bloc h3,
+#infos .container .bloc p{
+    color:white;
+}
+
+#services div.title {
+    text-align: center;
+}
+
+#services div.title h6 {
+    font-size: 2em;
+}
+
+#services .container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    max-width: 1500px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    padding: 100px 0;
+}
+@media screen and (max-width: 550px) {
+    #services .card {
+        width: 500px;
+    }
+}
+
+#services .card {
+    max-width: 500px;
+    min-height: 150px;
+    margin: 30px 20px;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    cursor: pointer;
+    transition: 0.3s;
+    position: relative;
+}
+#services .card:hover {
+    transform: translateY(-15px);
+}
+#services .card::before {
+    content: "";
+    position: absolute;
+    height: 5px;
+    background: linear-gradient(45deg, rgb(10,153,209), rgb(46, 197,178));
+    bottom: 0;
+    left: 0;
+    right: 100%;
+    border-radius: 50px;
+    transition: 0.3s;
+
+}
+#services .card:hover::before {
+    right: 0%
+}
+
+#services .card span {
+    font-size: 1.75em;
+    color: #1fb3bf;
+    transition: 0.5s ease-in-out;
+}
+
+#services .card:hover span {
+    transform: rotate(15deg);
+}
